@@ -1,0 +1,98 @@
+﻿@model Gasolineras.Models.Gasolinera
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Gasolinera</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Latitud)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Latitud)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Longitud)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Longitud)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Amenidades)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Amenidades)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PrecioMagna)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PrecioMagna)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PrecioPremium)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PrecioPremium)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PrecioDiesel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PrecioDiesel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HoraApertura)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HoraApertura)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HoraCierre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HoraCierre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Marca1.Descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Marca1.Descripcion)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
