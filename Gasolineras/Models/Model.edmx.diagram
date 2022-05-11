@@ -7,7 +7,7 @@
       <Diagram DiagramId="2b0fbadcd5e84fbf813683a3fb2b946a" Name="Diagram1">
         <EntityTypeShape EntityType="GasolinerasModel.Amenidade" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="GasolinerasModel.Gasolinera" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="GasolinerasModel.Marca" Width="1.5" PointX="0.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="GasolinerasModel.Marca" Width="1.5" PointX="0.5" PointY="1.75" IsExpanded="true" />
         <AssociationConnector Association="GasolinerasModel.FK_Gasolinera_Marca" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>

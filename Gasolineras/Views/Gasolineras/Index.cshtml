@@ -1,87 +1,77 @@
-﻿@model IEnumerable<Gasolineras.Models.Gasolinera>
-
-@{
-    ViewBag.Title = "Index";
+﻿@{
+    Layout = "~/Views/Shared/_Layout2.cshtml";
 }
 
-<h2>Index</h2>
+<div id="MapDiv" style="width: 500px; height: 500px">
+</div>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Latitud)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Longitud)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Nombre)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Amenidades)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PrecioMagna)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PrecioPremium)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PrecioDiesel)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.HoraApertura)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.HoraCierre)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Marca1.Descripcion)
-        </th>
-        <th></th>
-    </tr>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9YG_gSBJjxS7PCwJMUhKkyZ5LUPxOmCI"></script>
+<script>
+    $.ajax({
+        url: '/Gasolineras/GetMapMarker',
+        type: 'GET',
+        success: function (data) {
+            //create a blank array
+            var markers = [];
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Latitud)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Longitud)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Nombre)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Amenidades)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PrecioMagna)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PrecioPremium)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PrecioDiesel)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.HoraApertura)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.HoraCierre)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Marca1.Descripcion)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
+            //loop the list of addresses returned from Ajax request
+            $.each(data, function (index, item) {
+                //create a blank array of address
+                var marker = {};
 
-</table>
+                //fill data
+                marker["title"] = item.Nombre;
+                marker["lat"] = item.Latitud;
+                marker["lng"] = item.Longitud;
+                marker["description"] = item.Marca;
+
+                //push the current marker details in markers array
+                markers.push(marker);
+            })
+
+            //call Map function with all markers passed as list of arrays
+            initializeMap(markers);
+
+        }
+    });
+
+    function initializeMap(markers) {
+        //you can check your marker data in console
+        console.log(markers);
+        //Create Google map options
+        var GoogleMapOptions = {
+            center: new google.maps.LatLng(markers[0].lat, markers[0].lng),
+            zoom: 6,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+
+
+        //create a variable of InfoWindow type to show data on clicking map icon
+        var infoWindow = new google.maps.InfoWindow();
+        var map = new google.maps.Map(document.getElementById("MapDiv"), GoogleMapOptions);
+
+
+        //loop through each marker data
+        for (i = 0; i < markers.length; i++) {
+            var data = markers[i]
+            //set lat long of current marker
+            var myLatlng = new google.maps.LatLng(data.lat, data.lng);
+
+            var marker = new google.maps.Marker({
+                position: myLatlng,
+                map: map,
+                title: data.title
+            });
+
+            (function (marker, data) {
+                // add a on marker click event
+                google.maps.event.addListener(marker, "click", function (e) {
+                    //show description
+                    infoWindow.setContent(data.description);
+                    infoWindow.open(map, marker);
+                });
+            })(marker, data);
+        }
+    }
+
+</script>

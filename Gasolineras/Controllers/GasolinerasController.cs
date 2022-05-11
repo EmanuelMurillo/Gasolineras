@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Gasolineras.Models;
+using Newtonsoft.Json;
 
 namespace Gasolineras.Controllers
 {
@@ -15,10 +16,20 @@ namespace Gasolineras.Controllers
         private GasolinerasEntities1 db = new GasolinerasEntities1();
 
         // GET: Gasolineras
+
         public ActionResult Index()
         {
-            var gasolineras = db.Gasolineras.Include(g => g.Marca1);
-            return View(gasolineras.ToList());
+
+           
+            return View();
+        }
+
+        public JsonResult GetMapMarker()
+        {
+            db.Configuration.ProxyCreationEnabled = false;
+            var ListaGasolineras = db.Gasolineras.ToList();
+
+            return Json(ListaGasolineras, JsonRequestBehavior.AllowGet);
         }
 
         // GET: Gasolineras/Details/5
@@ -39,6 +50,7 @@ namespace Gasolineras.Controllers
         // GET: Gasolineras/Create
         public ActionResult Create()
         {
+            ViewBag.Amenidades = new SelectList(db.Amenidades, "Id", "Descripcion");
             ViewBag.Marca = new SelectList(db.Marcas, "Id", "Descripcion");
             return View();
         }
@@ -48,10 +60,12 @@ namespace Gasolineras.Controllers
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Latitud,Longitud,Nombre,Marca,Amenidades,PrecioMagna,PrecioPremium,PrecioDiesel,HoraApertura,HoraCierre")] Gasolinera gasolinera)
+        public ActionResult Create([Bind(Include = "Id,Latitud,Longitud,Nombre,Marca,Amenidades,PrecioMagna,PrecioPremium,PrecioDiesel,HoraApertura,HoraCierre")] Gasolinera gasolinera, int[] Amenidades)
         {
             if (ModelState.IsValid)
             {
+                string amenidades = Amenidades != null ? String.Join(",", Amenidades.Select(p => p.ToString()).ToArray()) : null;
+                gasolinera.Amenidades = amenidades;
                 db.Gasolineras.Add(gasolinera);
                 db.SaveChanges();
                 return RedirectToAction("Index");
