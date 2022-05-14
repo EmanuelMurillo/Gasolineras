@@ -1,0 +1,63 @@
+﻿
+.background-gasolineras {
+    padding-top:20px;
+    padding-bottom:20px;
+    background-color: #6A6964;
+}
+.btn-gasolineras {
+      border-radius: 25px !important;
+      width:120px !important;
+      padding:10px !important;
+}
+
+.btn-outline-success{
+    background-color:#ffffff;
+}
+
+.btn-outline-danger {
+    background-color: #ffffff;
+}
+
+.btn-outline-dark {
+    background-color: #ffffff;
+}
+
+.text-letra-M {
+    background-color: #198754;
+    color: #ffffff;
+    font-weight: 900;
+    border: 1px solid #ffffff;
+    padding:2px;
+    padding-top:5px;
+    padding-bottom:5px;
+    padding-left:5px;
+    padding-right:5px;
+}
+
+.text-letra-P {
+    background-color: #dc3545;
+    color: #ffffff;
+    font-weight: 900;
+    border: 1px solid #ffffff;
+    padding: 2px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.text-letra-D {
+    background-color: #000000;
+    color: #ffffff;
+    font-weight: 900;
+    border: 1px solid #ffffff;
+    padding: 2px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+ 
+
+ 
