@@ -22,3 +22,29 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.btn-admin {
+    border-radius: 25px !important;
+    width: 200px !important;
+    padding: 10px !important;
+    background-color: #43D01F;
+    color: #ffffff;
+}
+
+h2, h4 {
+    color: #AA226B;
+    font-weight: 700;
+}
+
+.text-box-admin {
+    background-color: transparent;
+    color: #808080;
+    outline: none;
+    outline-style: none;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom: solid #AA226B 3px;
+   padding:3px 10px;
+
+}

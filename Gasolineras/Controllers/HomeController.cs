@@ -20,9 +20,9 @@ namespace Gasolineras.Controllers
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult Bienvenido()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Página de Bienvenida.";
 
             return View();
         }

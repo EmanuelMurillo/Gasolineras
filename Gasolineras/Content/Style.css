@@ -32,6 +32,7 @@
     padding-bottom:5px;
     padding-left:5px;
     padding-right:5px;
+    
 }
 
 .text-letra-P {
@@ -58,6 +59,43 @@
     padding-right: 5px;
 }
 
- 
+.btn-admin {
+    border-radius: 25px !important;
+    width: 200px !important;
+    padding: 10px !important;
+    background-color: #43D01F;
+    color: #ffffff;
+}
+
+.font-detail{
+    font-weight:800;
+    font-size:27px;
+}
+
+
+ .modal-dialog{
+     position:fixed;
+     bottom:0;
+     left:0%;
+     right:0%;
+     transform: translate(-50%, -50%);
+
+ }
+
+.iconos-servicios i{
+    font-size:30px;
+}
+
+
+.iconos-servicios-false i {
+    color:#a4a4a4
+}
+
+
+
+.col-half-offset {
+    margin-left: 4.166666667%
+}
+
 
  

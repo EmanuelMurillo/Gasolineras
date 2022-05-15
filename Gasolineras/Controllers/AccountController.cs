@@ -163,7 +163,7 @@ namespace Gasolineras.Controllers
                     // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     // await UserManager.SendEmailAsync(user.Id, "Confirmar cuenta", "Para confirmar la cuenta, haga clic <a href=\"" + callbackUrl + "\">aquí</a>");
 
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Index", "Gasolineras");
                 }
                 AddErrors(result);
             }
@@ -392,7 +392,7 @@ namespace Gasolineras.Controllers
         public ActionResult LogOff()
         {
             AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "Gasolineras");
         }
 
         //
@@ -449,7 +449,7 @@ namespace Gasolineras.Controllers
             {
                 return Redirect(returnUrl);
             }
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "Gasolineras");
         }
 
         internal class ChallengeResult : HttpUnauthorizedResult

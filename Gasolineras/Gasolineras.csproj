@@ -208,7 +208,15 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\assets\BP_Logo.png" />
+    <Content Include="Content\assets\Chevron_Logo.png" />
     <Content Include="Content\assets\filter.png" />
+    <Content Include="Content\assets\logo.png" />
+    <Content Include="Content\assets\Mobil_Logo.png" />
+    <Content Include="Content\assets\PetroSeven_Logo.png" />
+    <Content Include="Content\assets\Redpetroil_Logo.png" />
+    <Content Include="Content\assets\Shell_Logo.png" />
+    <Content Include="Content\assets\Total_Logo.png" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -261,7 +269,7 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Bienvenido.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
@@ -299,6 +307,7 @@
     <Content Include="Views\Amenidades\Edit.cshtml" />
     <Content Include="Views\Amenidades\Index.cshtml" />
     <Content Include="Views\Shared\_Layout2.cshtml" />
+    <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

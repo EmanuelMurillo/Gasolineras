@@ -4,7 +4,65 @@
 
 <div id="MapDiv" style="width: 100%; height: 800px">
 </div>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Launch demo modal
+</button>
 
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Detalles</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row text-center">
+                    <div class="col">
+                        <p class="text-letra-M">M</p>
+                        <p class="font-detail">$20.27</p>
+                    </div>
+                    <div class="col">
+                        <p class="text-letra-P">P</p>
+                        <p class="font-detail">$22.43</p>
+                    </div>
+                    <div class="col">
+                        <p class="text-letra-D">D</p>
+                        <p class="font-detail">$21.37</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row iconos-servicios container text-center">
+                <div class="col iconos-servicios-false">
+                    <i class="fa-solid fa-hand-holding-droplet"></i>
+                    <p>Agua</p>
+                </div>
+                <div class="col col-half-offset">
+                    <i class="fa-solid fa-restroom"></i>
+                    <p>Baño</p>
+                </div>
+                <div class="col col-half-offset">
+                    <i class="fa-solid fa-store"></i>
+                    <p>Tienda</p>
+                </div>
+                <div class="col col-half-offset">
+                    <i class="fa-solid fa-bed"></i>
+                    <p>Area de descanso</p>
+                </div>
+                <div class="col col-half-offset">
+                    <i class="fa-solid fa-wind"></i>
+                    <p>Aire</p>
+                </div>
+            </div>
+           
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9YG_gSBJjxS7PCwJMUhKkyZ5LUPxOmCI"></script>
 <script>
     $.ajax({
@@ -64,7 +122,7 @@
             });
 
 
-  
+
             (function (marker, data) {
                 // add a on marker click event
                 google.maps.event.addListener(marker, "click", function (e) {
