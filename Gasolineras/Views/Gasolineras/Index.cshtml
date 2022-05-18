@@ -1,13 +1,36 @@
 ﻿@{
     Layout = "~/Views/Shared/_Layout2.cshtml";
 }
-
+    
 <div id="MapDiv" style="width: 100%; height: 800px">
 </div>
 
+@* Promociones *@
+<div class="row">
+    <div class="col">
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="~/Content/assets/promo_1.png" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="~/Content/assets/promo_2.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="~/Content/assets/promo_3.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="~/Content/assets/promo_4.png" class="d-block w-100" alt="...">
+                </div>
+            </div>
+        </div>
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    </div>
+
+</div>
+
+<!-- Modal DETALLE -->
+<div class="modal fade" id="ModalDetalle" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -15,6 +38,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
+                @* BOTONES DE LAS LETRAS *@
                 <div class="row text-center">
                     <div class="col">
                         <p class="text-letra-M">M</p>
@@ -30,6 +54,7 @@
                     </div>
                 </div>
             </div>
+            @* ICONOS DE SERVICIOS *@
             <div class="row iconos-servicios container text-center">
                 <div class="col iconos-servicios-false">
                     <i class="fa-solid fa-hand-holding-droplet"></i>
@@ -52,8 +77,16 @@
                     <p>Aire</p>
                 </div>
             </div>
-           
+
+            <br />
+            @* calculadora *@
+         
+
+
+            @* BOTON DE RUTA *@
+            <a class="btn btn-danger" href=@Url.Action("Ruta", "Home")>Cómo llegar?</a>
             <div class="modal-footer">
+
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 <button type="button" class="btn btn-primary">Save changes</button>
             </div>
@@ -79,7 +112,7 @@
                 marker["lat"] = item.Latitud;
                 marker["lng"] = item.Longitud;
                 marker["description"] = item.PrecioMagna.toString();
-                
+
 
                 //push the current marker details in markers array
                 markers.push(marker);
@@ -97,7 +130,7 @@
         //Create Google map options
         var GoogleMapOptions = {
             center: new google.maps.LatLng(markers[0].lat, markers[0].lng),
-            zoom: 6,
+            zoom: 12,
             mapTypeId: google.maps.MapTypeId.ROADMAP
         };
 
@@ -117,22 +150,22 @@
                 position: myLatlng,
                 map: map,
                 title: data.title.toString()
-              
+
             });
 
             var infoWindow = new google.maps.InfoWindow;
             infoWindow.setContent(data.title.toString());
             infoWindow.open(map, marker);
 
-                marker.addListener("click", () => {
+            marker.addListener("click", () => {
                 //alert("clic en el marcador");
-                  var myModal = new bootstrap.Modal(document.getElementById('exampleModal'));
-                  myModal.show();
-              });
+                var myModal = new bootstrap.Modal(document.getElementById('ModalDetalle'));
+                myModal.show();
+            });
 
             //(function (marker, data) {
             //    // add a on marker click event
-                
+
             //    });
             //})(marker, data);
         }

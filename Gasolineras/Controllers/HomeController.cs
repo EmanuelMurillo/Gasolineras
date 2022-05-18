@@ -13,7 +13,7 @@ namespace Gasolineras.Controllers
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult Ruta()
         {
             ViewBag.Message = "Your application description page.";
 

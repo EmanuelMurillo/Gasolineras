@@ -214,6 +214,10 @@
     <Content Include="Content\assets\logo.png" />
     <Content Include="Content\assets\Mobil_Logo.png" />
     <Content Include="Content\assets\PetroSeven_Logo.png" />
+    <Content Include="Content\assets\promo_1.png" />
+    <Content Include="Content\assets\promo_2.jpg" />
+    <Content Include="Content\assets\promo_3.jpg" />
+    <Content Include="Content\assets\promo_4.png" />
     <Content Include="Content\assets\Redpetroil_Logo.png" />
     <Content Include="Content\assets\Shell_Logo.png" />
     <Content Include="Content\assets\Total_Logo.png" />
@@ -245,6 +249,7 @@
     <Content Include="Models\Model.edmx.diagram">
       <DependentUpon>Model.edmx</DependentUpon>
     </Content>
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -268,7 +273,7 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Ruta.cshtml" />
     <Content Include="Views\Home\Bienvenido.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
