@@ -97,17 +97,17 @@
             <div class="container">
                 <div class="row">
                     <div class="col">
-                        <input class="form-control" type="text" placeholder="Ingrese el monto" aria-label="default input example">
+                        <input id="monto" class="form-control" type="text" placeholder="Ingrese el monto" aria-label="default input example">
                     </div>
                     <div class="col">
-                        <button class="btn btn-info">Calcular</button>
+                        <button class="btn btn-info" onclick="calcular()">Calcular</button>
                     </div>
 
                 </div>
                 <br>
                 <div class="row">
                     <div class="col">
-                        <input class="form-control" type="text" placeholder="Ingrese la cantidad de litros" aria-label="default input example">
+                        <input id="litros" class="form-control" type="text" placeholder="Ingrese la cantidad de litros" aria-label="default input example">
                     </div>
                     <div class="col">
                         <button class="btn btn-btn-info">Calcular</button>
@@ -117,7 +117,7 @@
                 <br>
                 <div class="row">
                     <div class="col">
-                        <input class="form-control" type="text" placeholder="500.654" aria-label="default input example">
+                        <input id="resultado" class="form-control" type="text" placeholder="500.654" aria-label="default input example">
                     </div>
 
                 </div>
@@ -219,4 +219,14 @@
         }
     }
 
+</script>
+
+<script>
+    function calcular() {
+        var monto = parseInt(document.getElementById("monto").value);
+        var litros = parseInt(document.getElementById("litros").value);
+        var cantidad = monto + litros;
+         document.getElementById("resultado").value = cantidad;
+
+        }
 </script>
