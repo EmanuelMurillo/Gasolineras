@@ -24,6 +24,14 @@ namespace Gasolineras.Controllers
             return View();
         }
 
+        // GET: Gasolineras
+        public ActionResult Index2()
+        {
+            var gasolineras = db.Gasolineras.Include(g => g.Marca1);
+            return View(gasolineras.ToList());
+        }
+
+
         public JsonResult GetMapMarker()
         {
             db.Configuration.ProxyCreationEnabled = false;
