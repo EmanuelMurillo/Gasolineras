@@ -8,7 +8,9 @@
 
         <div class="row">
             <div class="col-xs-12">
-                <h2>@ViewBag.Title.</h2>
+                <center>
+                    <h2>@ViewBag.Title</h2>
+                </center>
             </div>
 
         </div>
@@ -17,10 +19,13 @@
                 <section id="loginForm">
                     @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
                     {
+                    <center>
                         @Html.AntiForgeryToken()
                         <div class="row">
                             <div class="col-xs-12">
-                                <img style="max-width:40%" src="~/Content/assets/logo.png" />
+                                <center>
+                                    <img style="max-width:40%" src="~/Content/assets/logo.png" />
+                                </center>
                             </div>
                         </div>
                         <hr />
@@ -49,16 +54,24 @@
                         </div>
                         <div class="form-group">
                             <div class="col-md-offset-2 col-md-10">
-                                <input type="submit" value="Iniciar sesión" class="btn btn-success btn-admin" />
+                                <center>
+                                    <input type="submit" value="Iniciar sesión" class="btn btn-success btn-admin" />
+                                </center>
                             </div>
                         </div>
                         <p>
-                            @Html.ActionLink("Registrarse como usuario nuevo", "Register")
+                            <center>
+                                @Html.ActionLink("Registrarse como usuario nuevo", "Register")
+                            </center>
                         </p>
-                        
+
                         <p>
-                            @Html.ActionLink("¿Ha olvidado su contraseña?", "ForgotPassword")
+                            <center>
+                                @Html.ActionLink("¿Ha olvidado su contraseña?", "ForgotPassword")
+                            </center>
                         </p>
+
+                        </center>
                     }
                 </section>
             </div>

@@ -3,14 +3,19 @@
     ViewBag.Title = "Registrarse";
 }
 
-<h2>@ViewBag.Title.</h2>
+<center>
+    <h2>@ViewBag.Title</h2>
+</center>
 
 @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
     @Html.AntiForgeryToken()
-    <h4>Cree una cuenta nueva.</h4>
+    <center>
+        <h4>Cree una cuenta nueva</h4>
+    </center>
     <hr />
     @Html.ValidationSummary("", new { @class = "text-danger" })
+<center>
     <div class="form-group">
         @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
@@ -29,9 +34,13 @@
             @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control text-box-admin" })
         </div>
     </div>
+</center>
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
-            <input type="submit" class="btn btn-admin" value="Registrarse" />
+            <center>
+                <br>
+                <input type="submit" class="btn btn-admin" value="Registrarse" />
+            </center>
         </div>
     </div>
 }

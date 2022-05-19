@@ -218,6 +218,8 @@
     <Content Include="Content\assets\promo_2.jpg" />
     <Content Include="Content\assets\promo_3.jpg" />
     <Content Include="Content\assets\promo_4.png" />
+    <Content Include="Content\assets\promo_5.jpg" />
+    <Content Include="Content\assets\promo_6.jpg" />
     <Content Include="Content\assets\Redpetroil_Logo.png" />
     <Content Include="Content\assets\Shell_Logo.png" />
     <Content Include="Content\assets\Total_Logo.png" />
