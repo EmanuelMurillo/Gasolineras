@@ -2,7 +2,7 @@
     Layout = "~/Views/Shared/_Layout2.cshtml";
 }
     
-<div id="MapDiv" style="width: 100%; height: 800px">
+<div id="MapDiv" style="width: 100%; height: 415px">
 </div>
 
 @* Promociones *@
@@ -94,21 +94,50 @@
             <center>
                 <h6>Calculadora</h6>
             </center>
-            <input class="form-control" type="text" placeholder="Ingrese el monto" aria-label="default input example">
-            <br>
-            <input class="form-control" type="text" placeholder="Ingrese la cantidad de litros" aria-label="default input example">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <input class="form-control" type="text" placeholder="Ingrese el monto" aria-label="default input example">
+                    </div>
+                    <div class="col">
+                        <button class="btn btn-info">Calcular</button>
+                    </div>
 
-            <br>
-     
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col">
+                        <input class="form-control" type="text" placeholder="Ingrese la cantidad de litros" aria-label="default input example">
+                    </div>
+                    <div class="col">
+                        <button class="btn btn-btn-info">Calcular</button>
+                    </div>
 
-            <br>
-            @* BOTON DE RUTA *@
-            <a class="btn btn-danger" href=@Url.Action("Ruta", "Home")>¿Cómo llegar?</a>
-            <div class="modal-footer">
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col">
+                        <input class="form-control" type="text" placeholder="500.654" aria-label="default input example">
+                    </div>
 
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+                <br />
+                <br>
+                @* BOTON DE RUTA *@
+                <a class="btn btn-danger" href=@Url.Action("Ruta", "Home")>¿Cómo llegar?</a>
+                <div class="modal-footer">
+
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar detalle</button>
+                
+                </div>
             </div>
+            <br>
+
+
+            
+
+
+            
         </div>
     </div>
 </div>
