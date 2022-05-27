@@ -1,0 +1,46 @@
+﻿<Gasolineras.Models.Gasolinera>
+
+    <center>
+        <h2>@ViewBag.Title</h2>
+    </center>
+
+    @using (Html.BeginForm("Cuenta", "Suscripcion", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+    {
+        @Html.AntiForgeryToken()
+        <center>
+            <h4>Suscríbase a la aplicación</h4>
+        </center>
+        <hr />
+        @Html.ValidationSummary("", new { @class = "text-danger" })
+
+        <center>
+            <label for="exampleFormControlInput1" class="form-label">Nombre de usuario</label>
+            <input class="form-control form-control-sm" type="text" placeholder="Usuario" aria-label=".form-control-sm example" required>
+            <br />
+        </center>
+
+        <center>
+            <div class="form-group">
+                <label for="exampleFormControlInput1" class="form-label">Dirección de correo electrónico</label>
+                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" required>
+            </div>
+
+        </center>
+
+        <center>
+            <div class="form-group">
+                <label for="exampleFormControlInput1" class="form-label">Contraseña</label>
+                <input type="password" class="form-control" id="exampleFormControlInput1" placeholder="Contraseña" required>
+            </div>
+
+        </center>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <center>
+                    <br>
+                    <input type="submit" class="btn btn-admin" value="Suscribirse" />
+                </center>
+            </div>
+        </div>
+    }
+
